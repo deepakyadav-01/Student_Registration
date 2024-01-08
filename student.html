@@ -7,125 +7,325 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
   <link rel="stylesheet" href="style.css">
-</head>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
 <body>
-  <div class="main-ctr">
-    <div class="st">Student Registration Form
-    </div>
-    <form action="">
-      <div class="form">
-<!-- Name of the student -->
-        <div class="input_field">
-          <label>First Name</label>
-          <input type="text" class="input" id="name" name="f_na" placeholder="Enter first name">
-        </div>
-
-        <div class="input_field">
-          <label>Last Name</label>
-          <input type="text" class="input" id="name" name="l_na" placeholder="Enter last name">
-        </div>
-<!-- Gender if the student -->
-        <div class="input_field" id="gender">
-          <label for="">Gender</label>
-          <input type="radio" name="gender" id="radio" value="Male">Male
-          <input type="radio" name="gender" id="radio" value="Female">Female
-        </div>
-<!-- Age of the student -->
-        <div class="input_field">
-          <label for="">Age</label>
-          <input type="text" class="input" name="age" placeholder="Enter your age">
-        </div>
-<!-- DOB of the student -->
-        <div class="input_field">
-          <label for="">Date of Birth</label>
-          <input type="date" class="input" name="dob">
-        </div>
-<!-- mail id of the student -->
-        <div class="input_field">
-          <label>Email Address</label>
-          <input type="email" class="input" name="email" placeholder="Enter your email">
-        </div>
-<!-- address field -->
-        <div class="input_field">
-          <label>Address</label>
-          <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter your address"></textarea>
-        </div>
-<!-- state -->
-        <div class="input_field">
-          <label>State</label>
-          <div class="custom_select">
-            <select id="state" name="state">
-              <option value="">--Select your state--</option>
-              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chandigarh">Chandigarh</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-              <option value="Daman and Diu">Daman and Diu</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Himachal Pradesh">Himachal Pradesh</option>
-              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Ladakh">Ladakh</option>
-              <option value="Lakshadweep">Lakshadweep</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Nagaland">Nagaland</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Puducherry">Puducherry</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Uttarakhand">Uttarakhand</option>
-              <option value="West Bengal">West Bengal</option>
-            </select>
-          </div>
-        </div>
-        <!-- hobbies section -->
-        <div class="input_field" id="hobbies" >
-          <label for="">Hobbies</label>
-          <div class="hobbies" >
-            <input type="checkbox" name="Hobbies" id="" value="Music">
-            <label for="">Music</label>
-            <input type="checkbox" name="Hobbies" id="" value="Movies">
-            <label for="">Movies</label>
-            <input type="checkbox" name="Hobbies" id="" value="Sports">
-            <label for="">Sports</label>
-            <input type="checkbox" name="Hobbies" id="" value="Travel">
-            <label for="">Travel</label>
-          </div>
-        </div>
-<!-- profile photo section -->
-        <div class="input_field">
-          <label>Upload Photo</label><p id="file-size">*Max size 100kb.</p>
-          <input type="file" name="myfile" id="myfile" placeholder="Upload your photo" rows="7"/>
-          
-        </div>
-
-        <div class="input_field">
-        </div>
-          <button type="submit" value="Register" class="btn">Register</button>
-
+  <div class="main_ctr">
+  <form method="post" enctype="multipart/form-data">
+    <!-- for name -->
+      <div class="input_div">
+          <label class="label-name" for="firstname">FirstName:</label>
+          <input type="text" id="fnametxt" placeholder="Enter your firstname"/>
       </div>
-    </form>
+      <div class="input_div">
+        <label class="label-name" for="lastname">LastName:</label>
+        <input type="text" id="lnametxt" placeholder="Enter your lastname"/>
+    </div>
+    <!-- for gender -->
+    <div class="input_div">
+          <label class="label-name">Gender:</label>
+          <input type="radio" id="female" name="gender" value="female"><label for="female" class="abc">Female</label>
+          <input type="radio" id="male" name="gender" value="male"><label for="male" class="abc">Male</label>
+      </div>
+      <!-- for age -->
+      <div class="input_div">
+        <label class="label-name">Age</label>
+        <input type="text" id="st_age" placeholder="Enter your age">
+      </div>
+      <!-- for DOB -->
+      <div class="input_div">
+          <label class="label-name">Date Of Birth:</label>
+          <input type="date" name="dob" id="dob">
+      </div>
+      <!-- for email -->
+      <div class="input_div">
+        <label for="mail" class="label-name">E-mail:</label>
+        <input type="email" id="mailtxt" required placeholder="abc@efg.com" />
+    </div>
+    <!-- for address -->
+    <div class="input_div">
+      <label for="msg" class="label-name">Address:</label>
+      <textarea id="msgtxt" placeholder="Add your Address"></textarea>
   </div>
-
+      <!-- for states -->
+      <div class="input_div">
+          <label for="st_state" class="label-name">States</label>
+          <div class="custom_select">
+          <select id="sta">
+            <option value="">--Select your state--</option>
+            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+            <option value="Daman and Diu">Daman and Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+        </div>
+      </div>
+      <!-- for hobbies -->
+      <div class="input_div">
+          <label for="hobbies" class="label-name">Hobbies:</label>
+          <input type="checkbox" value="music" name="hobb" id="msc" class="chk" /><label for="music">Movies</label>
+          <input type="checkbox" value="sports" name="hobb" id="sprts" class="chk" /><label for="sports">Sports</label>
+          <input type="checkbox" value="coding" name="hobb" id="cdg" class="chk" /><label for="coding">Coding</label>
+          <input type="checkbox" value="movies" name="hobb" id="mvs" class="chk" /><label for="movies">Movies</label>
+      </div>
+      <!-- for photo upload -->
+      <div class="input_div">
+          <label for="photo" class="label-name">Photo:</label>
+          <input type="file" name="File1" id="File1" accept="image/*" placeholder="Upload your photo" />
+      </div>
+      <!-- submit button -->
+      <div class="input_div">
+      <div class="button">
+          <button type="submit" onclick="savedata();">Register</button>
+      </div>
+      </div>
+  </form>
+  <div id="result_grid">
+      <div id="edit_view_panel">
+          <!--<input type="button" value="View" />
+          <input type="button" value="Edit" />-->
+          <button type="submit" value="View"> View </button>
+          <button type="submit" value="Edit"> Edit </button>
+      </div>
+      <div>
+          <table id="form_result">
+              <tr>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Gender</th>
+                  <th>Age</th>
+                  <th>DOB</th>
+                  <th>E-mail</th>
+                  <th>Address</th>
+                  <th>States</th>
+                  <th>Hobbies</th>
+                  <th>Photo</th>
+              </tr>
+          </table>
+      </div>
+  </div>
+</div>
 </body>
-
 </html>
+
+<script type="text/javascript">
+
+  var checkedValue = [];
+  var row;
+  var data;
+  function validateForm() {
+            var isValid = true;
+
+            // Reset previous errors
+            resetErrors();
+
+            // Validate each field
+            if (!validateField('fnametxt', 'First Name')) isValid = false;
+            if (!validateField('lnametxt', 'Last Name')) isValid = false;
+            if (!validateRadio('gender', 'Gender')) isValid = false;
+            if (!validateField('st_age', 'Age')) isValid = false;
+            if (!validateField('dob', 'Date of Birth')) isValid = false;
+            if (!validateEmail('mailtxt')) isValid = false;
+            if (!validateField('msgtxt', 'Address')) isValid = false;
+            if (!validateSelect('sta', 'State')) isValid = false;
+            if (!validateCheckbox('hobb', 'Hobbies')) isValid = false;
+            if (!validateFile('File1')) isValid = false;
+
+            return isValid;
+        }
+
+        function validateField(fieldName, fieldLabel) {
+            var field = document.getElementById(fieldName);
+            var errorMessage = document.getElementById(fieldName + 'Error');
+
+            if (field.value.trim() === '') {
+                errorMessage.textContent = fieldLabel + ' is required.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateRadio(groupName, fieldLabel) {
+            var radioGroup = document.getElementsByName(groupName);
+            var errorMessage = document.getElementById(groupName + 'Error');
+
+            for (var i = 0; i < radioGroup.length; i++) {
+                if (radioGroup[i].checked) {
+                    return true;
+                }
+            }
+
+            errorMessage.textContent = fieldLabel + ' is required.';
+            return false;
+        }
+
+        function validateEmail(fieldName) {
+            var field = document.getElementById(fieldName);
+            var errorMessage = document.getElementById(fieldName + 'Error');
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                errorMessage.textContent = 'Enter a valid email address.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateSelect(fieldName, fieldLabel) {
+            var field = document.getElementById(fieldName);
+            var errorMessage = document.getElementById(fieldName + 'Error');
+
+            if (field.value === '') {
+                errorMessage.textContent = fieldLabel + ' is required.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateCheckbox(groupName, fieldLabel) {
+            var checkboxGroup = document.getElementsByName(groupName);
+            var errorMessage = document.getElementById(groupName + 'Error');
+
+            for (var i = 0; i < checkboxGroup.length; i++) {
+                if (checkboxGroup[i].checked) {
+                    return true;
+                }
+            }
+
+            errorMessage.textContent = fieldLabel + ' is required.';
+            return false;
+        }
+
+        function validateFile(fieldName) {
+            var field = document.getElementById(fieldName);
+            var errorMessage = document.getElementById(fieldName + 'Error');
+
+            if (!field.value) {
+                errorMessage.textContent = 'Upload a photo.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function resetErrors() {
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function (element) {
+                element.textContent = '';
+            });
+        }
+
+
+  function getRadioValue(theRadioGroup) {
+      var elements = document.getElementsByName(theRadioGroup);
+      for (var i = 0, l = elements.length; i < l; i++) {
+          if (elements[i].checked) {
+              return elements[i].value;
+          }
+      }
+  }
+
+  function getCheckBox(thisCheckBoxGroup) {
+     // var checkedValue = [];
+      var inputElements = document.getElementsByName(thisCheckBoxGroup);
+      for (var i = 0; inputElements[i]; ++i) {
+          if (inputElements[i].checked) {
+               checkedValue.push(inputElements[i].value);              
+          }
+
+      } return checkedValue;
+  }
+
+  function savedata() {
+
+      var statestudent = document.getElementById("sta");
+       data = {
+          "firstname": document.getElementById('fnametxt').value,
+          "lastname": document.getElementById('lnametxt').value,
+          "gender": getRadioValue('gender'),
+          "age": document.getElementById('st_age').value,
+          "dob": document.getElementById('dob').value,
+          "email": document.getElementById('mailtxt').value,
+          "address": document.getElementById('msgtxt').value,
+          "st_state": statestudent.options[statestudent.selectedIndex].text,
+          "hobb": getCheckBox("hobb"),
+          "filename" : document.getElementById('File1').value,
+      }
+      console.log(data);      
+      createtablerow();
+
+
+  }
+
+  function createtablerow() {
+
+      table = document.getElementById('form_result');    
+      var columnCount = table.rows[0].cells.length;
+
+       //Add the data rows.
+          row = table.insertRow(-1);
+
+          var cell1 = row.insertCell(-1);
+          var cell2 = row.insertCell(-1);
+          var cell3 = row.insertCell(-1);
+          var cell4 = row.insertCell(-1);
+          var cell5 = row.insertCell(-1);
+          var cell6 = row.insertCell(-1);
+          var cell7 = row.insertCell(-1);
+          var cell8 = row.insertCell(-1);
+          var cell9 = row.insertCell(-1);
+          var cell10 = row.insertCell(-1);
+
+          cell1.innerHTML = data.firstname;
+          cell2.innerHTML = data.lastname;
+          cell3.innerHTML = data.gender;
+          cell4.innerHTML = data.age;
+          cell5.innerHTML = data.dob;
+          cell6.innerHTML = data.email;
+          cell7.innerHTML = data.address;
+          cell8.innerHTML = data.st_state;
+          cell9.innerHTML = data.hobb;
+          cell10.innerHTML = data.filename;
+           //here i am adding the row
+          table.appendChild(row);
+
+
+  }
+</script>

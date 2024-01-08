@@ -1,123 +1,164 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: 'Oswald', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.registration-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.three-details-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media only screen and (max-width: 600px) {
+  .registration-container {
+      padding: 15px;
   }
-  
-  .main-ctr {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .three-details-item {
+      flex-direction: column;
   }
-  
-  .st {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
+
+  label {
+      width: 100%;
+      margin-bottom: 10px;
   }
-  
-  .form {
-    max-width: 400px;
-    margin: 0 auto;
+
+  .submit-btn {
+      margin-top: 10px;
   }
-  
-  .input_field {
-    margin-bottom: 20px;
+}
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.registration-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.three-details-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media only screen and (max-width: 600px) {
+  .registration-container {
+      padding: 15px;
   }
-  
-  .label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+
+  .three-details-item {
+      flex-direction: column;
   }
-  
-  .input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+
+  label {
+      width: 100%;
+      margin-bottom: 10px;
   }
-  
-  #gender {
-    display: flex;
-    align-items: center;
+
+  .submit-btn {
+      margin-top: 10px;
   }
-  
-  #gender label {
-    margin-right: 10px;
-  }
-  
-  #hobbies {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .hobbies input {
-    margin-right: 5px;
-  }
-  
-  .custom_select select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .terms {
-    display: flex;
-    align-items: center;
-  }
-  
-  .check {
-    position: relative;
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .check input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-  }
-  
-  .check input:checked + .checkmark:after {
-    content: '\2713';
-    font-size: 14px;
-    color: #333;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .btn {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .btn:hover {
-    background-color: #45a049;
-  }
-  
+}

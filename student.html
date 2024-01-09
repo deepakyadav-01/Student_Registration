@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Registration form</title>
+    <link rel="icon" href="icon.jpg" type="image/icon type">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -57,9 +58,9 @@
                     <!-- gender field -->
                     <div class="gender" style="margin: 4px 20px;">
                         <label for="">Gender:</label>
-                        <input type="radio" name="female" id="" value="female">female
-                        <input type="radio" name="male" id="" value="male">male
-                        <input type="radio" name="others" id="" value="others">others
+                        <input type="radio" name="gender" id="" value="female">female
+                        <input type="radio" name="gender" id="" value="male">male
+                        <input type="radio" name="gender" id="" value="others">others
                     </div>
                     <!-- address field -->
                     <div class="input_field">
@@ -76,7 +77,7 @@
             </div>
         </div>
         <div class="card">
-            <div class="bg-primary p-2">
+            <div class="bg-primary p-2" style="overflow-x: auto;">
                 <!-- table -->
                 <table class="list" id="studentList">
                     <thead>
@@ -86,6 +87,8 @@
                             <th>Age</th>
                             <th>E-mail</th>
                             <th>Mobile No</th>
+                            <th>Gender</th>
+                            <th>Address</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -164,7 +167,6 @@ function validateForm(formData) {
             formData["gender"] = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
             formData["address"] = document.getElementById("address").value;
 
-
             return formData;
         }
         // insert new data to the table
@@ -182,12 +184,12 @@ function validateForm(formData) {
             var cell5 = newRow.insertCell(4);
             cell5.innerHTML = data.mobileno;
             var cell6 = newRow.insertCell(5);
-            cell6.innerHTML = `<a href="#" onClick='onEdit(this)' class='btn-success'>Edit</a>
-                        <a href="#" onClick='onDelete(this)' class='btn-danger'>Delete</a>`;
+            cell6.innerHTML = data.gender;
             var cell7 = newRow.insertCell(6);
-            cell7.innerHTML = data.gender;
+            cell7.innerHTML = data.address;
             var cell8 = newRow.insertCell(7);
-            cell8.innerHTML = data.address;
+            cell8.innerHTML = `<a href="#" onClick='onEdit(this)' class='btn-success'>Edit</a>
+                        <a href="#" onClick='onDelete(this)' class='btn-danger'>Delete</a>`;
         }
         // reset form
         function resetForm() {

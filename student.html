@@ -18,7 +18,7 @@
         <div class="bg_color">
                 <a href="#" id="brown">Brown</a>
                 <a href="#" id="purple">Purple</a>
-                <a href="#" id="def">default</a>
+                <a href="#" id="def">Default</a>
         </div>
         </div>
             <!-- main containet -->
@@ -69,8 +69,8 @@
                 </div>
                 <!-- submit and reset buttons -->
                     <div class="form_action--button">
-                        <input type="submit" value="Submit" class="btn btn-success ">
-                        <input type="reset" value="Reset" class="btn btn-warning">
+                        <input type="submit" id="submit" value="Submit" class="btn btn-success ">
+                        <input type="reset" id="reset" value="Reset" class="btn btn-warning">
                     </div>
                 </form>
             </div>
@@ -246,14 +246,20 @@ function validateForm(formData) {
             // Add click event listeners to each color option
             document.getElementById('brown').addEventListener('click', function () {
                 document.body.style.backgroundColor = '#76453B';
+                document.getElementById('submit').style.backgroundColor='#76453B';
+                document.getElementById('reset').style.backgroundColor='#76453B';
             });
 
             document.getElementById('purple').addEventListener('click', function () {
                 document.body.style.backgroundColor = '#5D3587';
+                document.getElementById('submit').style.backgroundColor='#5D3587';
+                document.getElementById('reset').style.backgroundColor='#5D3587';
             });
 
             document.getElementById('def').addEventListener('click', function () {
                 document.body.style.backgroundColor = '#4070f4';
+                document.getElementById('submit').style.backgroundColor='#4070f4';
+                document.getElementById('reset').style.backgroundColor='#4070f4';
             });
         });
     </script>

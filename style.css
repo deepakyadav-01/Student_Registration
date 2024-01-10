@@ -170,8 +170,7 @@ th {
     padding: 8px 15px;
 }
 
-tr:nth-child(even),
-table.list thead>tr {
+th {
     background-color: #ddd;
 }
 
@@ -192,4 +191,10 @@ table.list thead>tr {
 
 .btn-danger {
     background-color: #dc3545;
+}
+.error-message{
+    color: red;
+}
+.ast{
+    color: red;
 }

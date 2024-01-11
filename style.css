@@ -6,10 +6,61 @@ body {
     font-family: Arial, sans-serif;
     font-family: 'Oswald', sans-serif;
 }
+/* for navbar */
 .navbar{
     display: flex;
     background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index:1;
 }
+/* dropdown */
+.dropdown {
+    float: right;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.dropbtn{
+    background-color: #86A7FC;
+    padding: 0.4rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+    margin-left:50px;
+    border-color: #86A7FC;
+
+}
+
+.bg_color {
+    display: none;
+    position:fixed;
+    background-color: transparent;
+    border-radius: 0.3rem;
+    border-color: transparent;
+    min-width: 85px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .bg_color {
+    display: flex;
+    margin-left: 150px;
+}
+
+.bg_color a {
+    color: white;
+    padding: 12px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.bg_color a:hover {
+    background-color: #B6BBC4;
+}
+/* ends dropdown */
 .bg_color{
     margin-left: 25px;
     margin-top: 15px;
@@ -18,7 +69,7 @@ body {
 .bg_color a{
     margin: 7px;
     text-decoration: none;
-    color: #fff;
+    
     border-radius: 5px;
 }
 #brown{
@@ -53,6 +104,8 @@ h1.text-center.text-light {
     width: 100%;
     max-width: 550px;
     box-sizing: border-box;
+    margin-top:90px;
+    transition: transform 0.2s;
 }
 
 .p-2 {
@@ -63,6 +116,7 @@ h1.text-center.text-light {
   background-color: #fff;
   
 }
+/* for header */
 .p-2 header{
     position: relative;
     font-size: 20px;
@@ -83,12 +137,14 @@ h1.text-center.text-light {
     background-color: #4070f4;
   
   }
+  /* for form */
   .p-2 form{
     position: relative;
     margin-top: 16px;
     min-height: 490px;
     background-color:#f2f2f2;
   }
+
   .fields{
     display: flex;
   align-items: center;
@@ -162,6 +218,7 @@ input[type="reset"]:hover {
     width: 100%;
     border-collapse: collapse;
 }
+/* for table */
 
 td,
 th {
@@ -177,7 +234,7 @@ th {
 .text-light {
     color: #333;
 }
-
+/* for buttons */
 .btn-success,
 .btn-danger {
     display: inline-block;
@@ -197,4 +254,140 @@ th {
 }
 .ast{
     color: red;
+}
+
+
+/* for notification */
+
+.toast { 
+	position: fixed; 
+	top: 25px; 
+	right: 25px; 
+	max-width: 300px; 
+	background: #fff; 
+	padding: 0.5rem; 
+	border-radius: 4px; 
+	box-shadow: -1px 1px 10px
+		rgba(0, 0, 0, 0.3); 
+	z-index: 1023; 
+	animation: slideInRight 0.3s 
+			ease-in-out forwards, 
+		fadeOut 0.5s ease-in-out 
+			forwards 3s; 
+	transform: translateX(110%); 
+} 
+
+.toast.closing { 
+	animation: slideOutRight 0.5s 
+		ease-in-out forwards; 
+} 
+
+.toast-progress { 
+	position: absolute; 
+	display: block; 
+	bottom: 0; 
+	left: 0; 
+	height: 4px; 
+	width: 100%; 
+	background: #b7b7b7; 
+	animation: toastProgress 3s 
+		ease-in-out forwards; 
+} 
+
+.toast-content-wrapper { 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center; 
+} 
+
+.toast-icon { 
+	padding: 0.35rem 0.5rem; 
+	font-size: 1.5rem; 
+} 
+
+.toast-message { 
+	flex: 1; 
+	font-size: 0.9rem; 
+	color: #000000; 
+	padding: 0.5rem; 
+} 
+
+.toast.toast-success { 
+	background: #36f083; 
+} 
+
+.toast.toast-success .toast-progress { 
+	background-color: #2ecc71; 
+} 
+
+.toast.toast-danger { 
+	background: #efaca5; 
+} 
+
+.toast.toast-danger .toast-progress { 
+	background-color: #e74c3c; 
+} 
+
+.toast.toast-info { 
+	background: #bddaed; 
+} 
+
+.toast.toast-info .toast-progress { 
+	background-color: #3498db; 
+} 
+
+.toast.toast-warning { 
+	background: #ead994; 
+} 
+
+.toast.toast-warning .toast-progress { 
+	background-color: #f1c40f; 
+} 
+
+@keyframes slideInRight { 
+	0% { 
+		transform: translateX(110%); 
+	} 
+
+	75% { 
+		transform: translateX(-10%); 
+	} 
+
+	100% { 
+		transform: translateX(0%); 
+	} 
+} 
+
+@keyframes slideOutRight { 
+	0% { 
+		transform: translateX(0%); 
+	} 
+
+	25% { 
+		transform: translateX(-10%); 
+	} 
+
+	100% { 
+		transform: translateX(110%); 
+	} 
+} 
+
+@keyframes fadeOut { 
+	0% { 
+		opacity: 1; 
+	} 
+
+	100% { 
+		opacity: 0; 
+	} 
+} 
+
+@keyframes toastProgress { 
+	0% { 
+		width: 100%; 
+	} 
+
+	100% { 
+		width: 0%; 
+	} 
 }

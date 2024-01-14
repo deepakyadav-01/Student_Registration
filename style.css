@@ -47,23 +47,24 @@ body {
 
 .dropdown:hover .bg_color {
     display: flex;
-    margin-left: 150px;
+    margin-left: 116px;
 }
 
 .bg_color a {
     color: white;
-    padding: 12px 8px;
+    padding: 5px 8px;
     text-decoration: none;
     display: block;
 }
 
 .bg_color a:hover {
     background-color: #B6BBC4;
+    scale: 1.04;
 }
 /* ends dropdown */
 .bg_color{
     margin-left: 25px;
-    margin-top: 15px;
+    margin-top: 5px;
     margin-right: 6px;
 }
 .bg_color a{

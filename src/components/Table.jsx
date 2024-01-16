@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './App.css';
 const Table = () => {
 
   return (
-    <div className='d-flex'>       
+    <div className='d-flex flex flex-wrap justify-around'>       
      <div className="card" id="cardtable">
-    <div className="bg-primary p-2" id="tbl">
+    <div className="bg-primary p-2" id="tbl" >
       <table className="list" id="studentList">
       <thead>
         <tr>
@@ -16,7 +16,7 @@ const Table = () => {
           <th>Mobile No</th>
           <th>Gender</th>
           <th>Address</th>
-          <th>Action</th>
+          <th id="th_hea">Action</th>
         </tr>
       </thead>
       <tbody class="text-light"></tbody> 

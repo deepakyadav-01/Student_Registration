@@ -6,96 +6,12 @@ body {
     font-family: Arial, sans-serif;
     font-family: 'Oswald', sans-serif;
 }
-/* for navbar */
-.navbar{
-    display: flex;
-    background-color: #fff;
-    position: fixed;
-    width: 100%;
-    z-index:1;
-    height:50px
-}
-/* dropdown */
-.dropdown {
-    float: right;
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
-}
-.dropbtn{
-    background-color: #86A7FC;
-    padding: 0.4rem;
-  font-family: sans-serif;
-  border-radius: 0.3rem;
-  cursor: pointer;
-    color: #fff;
-    margin-top: 10px;
-    margin-left:50px;
-    border-color: #86A7FC;
 
-}
-
-.bg_color {
-    display: none;
-    position:fixed;
-    background-color: transparent;
-    border-radius: 0.3rem;
-    border-color: transparent;
-    min-width: 85px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .bg_color {
-    display: flex;
-    margin-left: 116px;
-}
-
-.bg_color a {
-    color: white;
-    padding: 5px 8px;
-    text-decoration: none;
-    display: block;
-}
-
-.bg_color a:hover {
-    background-color: #B6BBC4;
-    scale: 1.04;
-}
-/* ends dropdown */
-.bg_color{
-    margin-left: 25px;
-    margin-top: 5px;
-    margin-right: 6px;
-}
-.bg_color a{
-    margin: 7px;
-    text-decoration: none;
-    
-    border-radius: 5px;
-}
-#brown{
-    border: 2px solid #76453B;
-    background-color: #76453B;
-}
-#purple{
-    border: 2px solid #5D3587;
-    background-color: #5D3587;
-}
-#def{
-    border: 2px solid #4070f4;
-    background-color: #4070f4;
-}
 h1.text-center.text-light {
     text-align: center;
     color: #fff;
 }
 
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 .card {
     background-color: #fff;
@@ -204,10 +120,10 @@ input[type="reset"] {
     width:503px ;
     border: none;
     outline: none;
-    color: #fff;
+    background-color: rgb(129 140 248);
     border-radius:5px ;
     margin:25px 10px;
-    background-color: rgb(67 56 202);
+    color:black;
 }
 
 input[type="submit"]:hover {
@@ -228,14 +144,14 @@ input[type="reset"]:hover {
 
 td,
 th {
-    border: 1px solid rgb(67 56 202);
+    border: 1px solid white;
     text-align: left;
     padding: 8px 15px;
-    color: white;
+    color: black;
 }
 
 th {
-    background-color:rgb(67 56 202);
+    background-color:white;
 }
 
 .text-light {
@@ -353,7 +269,7 @@ th {
 #tbl{
     overflow-x:auto;
     margin-top:5px;
-    background-color: rgb(67 56 202);
+    background-color: white;
 }
 
 #dob{

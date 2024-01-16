@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './App.css';
 const Form = () => {
 
       
   return (
-    <div className='d-flex'>
+    <div className='d-flex flex flex-wrap justify-around'>
       
       <div className="card" id="cardform">
     <div className="p-2">

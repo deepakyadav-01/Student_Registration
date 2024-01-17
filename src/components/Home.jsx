@@ -37,12 +37,29 @@ const Home = () => {
       updatedStudentList[selectedStudentIndex] = formData;
       setStudentList(updatedStudentList);
       setSelectedStudentIndex(null);
-      
-    
+      toast.success('Data updated sucessfully!', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
       // Add new student
       setStudentList([...studentList, formData]);
-
+      toast.success('form submitted sucessfully!', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       
     }
 

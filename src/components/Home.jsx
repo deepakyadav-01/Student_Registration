@@ -38,30 +38,12 @@ const Home = () => {
       setStudentList(updatedStudentList);
       setSelectedStudentIndex(null);
       
-      toast.success('Data updated successfully!', {
-        position: "top-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+    
     } else {
       // Add new student
       setStudentList([...studentList, formData]);
 
-      toast.success('Data submitted successfully!', {
-        position: "top-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      
     }
 
     // Save data to local storage

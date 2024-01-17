@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { toast } from 'react-toastify';
+
 const Form = ({ onFormSubmit, selectedStudent }) => {
   const initialFormData = {
     fullName: '',
@@ -12,7 +12,7 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
     address: '',
   };
 
-  const [formData, setFormData] = useState(selectedStudent ?? initialFormData);
+  const [formData, setFormData] = useState(selectedStudent || initialFormData);
   const [formErrors, setFormErrors] = useState({
     fullName: '',
     dob: '',
@@ -57,22 +57,7 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
 
     if (isFormValid) {
       onFormSubmit(e, formData);
-      setFormData(selectedStudent);
     }
-  };
-  const handleReset = () => {
-    // Reset the form data to its initial state
-    setFormData(initialFormData);
-    toast.success('Form Resseted successfully!', {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
   };
 
   const validateForm = () => {
@@ -236,7 +221,7 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
             </div>
             <div className="form_action--button">
               <input type="submit" id="submit" value="Submit" className="btn btn-success" />
-              <input type="reset" id="reset" value="Reset" className="btn btn-warning" onClick={handleReset} />
+              <input type="reset" id="reset" value="Reset" className="btn btn-warning" />
             </div>
           </form>
         </div>

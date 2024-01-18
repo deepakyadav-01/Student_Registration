@@ -58,6 +58,8 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
 
     if (isFormValid) {
       onFormSubmit(e, formData);
+      setFormData(initialFormData);
+
     }
   };
   const handleReset = () => {

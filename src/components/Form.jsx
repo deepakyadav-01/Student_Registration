@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { toast } from 'react-toastify';
-import { validateField } from './Validate';
+
 const Form = ({ onFormSubmit, selectedStudent }) => {
   const initialFormData = {
     fullName: '',
@@ -23,45 +23,45 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
     gender: '',
     address: '',
   });
-  // const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // const mobilenoRegex = /^[6-9][0-9]{9}$/;
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  //   validateField(name, value);
-  // };
+  const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const mobilenoRegex = /^[6-9][0-9]{9}$/;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    validateField(name, value);
+  };
 
-  // const validateField = (fieldName, value) => {
-  //   if (!value || !value.trim()) {
-  //     setFormErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is required` }));
-  //     return false;
-  //   } 
-  //   else if (fieldName === 'email' && !emailRegex.test(value)) {
-  //     setFormErrors((prevErrors) => ({ ...prevErrors, email: 'Invalid email format' }));
-  //     return false;
-  //   }
+  const validateField = (fieldName, value) => {
+    if (!value || !value.trim()) {
+      setFormErrors((prevErrors) => ({ ...prevErrors, [fieldName]: `${fieldName} is required` }));
+      return false;
+    } 
+    else if (fieldName === 'email' && !emailRegex.test(value)) {
+      setFormErrors((prevErrors) => ({ ...prevErrors, email: 'Invalid email format' }));
+      return false;
+    }
 
-  //   else if (fieldName === 'mobileno' && !mobilenoRegex.test(value)) {
-  //     setFormErrors((prevErrors) => ({ ...prevErrors, mobileno: 'Invalid phone number format' }));
-  //     return false;
-  //   }
+    else if (fieldName === 'mobileno' && !mobilenoRegex.test(value)) {
+      setFormErrors((prevErrors) => ({ ...prevErrors, mobileno: 'Invalid phone number format' }));
+      return false;
+    }
 
-  //   else {
-  //     setFormErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
-  //     return true;
-  //   }
-  // };
+    else {
+      setFormErrors((prevErrors) => ({ ...prevErrors, [fieldName]: '' }));
+      return true;
+    }
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const isFormValid = validateForm();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isFormValid = validateForm();
 
-  //   if (isFormValid) {
-  //     onFormSubmit(e, formData);
-  //     setFormData(initialFormData);
+    if (isFormValid) {
+      onFormSubmit(e, formData);
+      setFormData(initialFormData);
 
-  //   }
-  // };
+    }
+  };
   const handleReset = () => {
     // Reset the form data to its initial state
     setFormData(initialFormData);
@@ -76,28 +76,6 @@ const Form = ({ onFormSubmit, selectedStudent }) => {
       theme: "light",
     });
   };
-
-
-  
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    const error = validateField(name, value);
-    setFormErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formErrors = validateForm(formData);
-
-    if (Object.keys(formErrors).length === 0) {
-      onFormSubmit(e, formData);
-      setFormData(initialFormData);
-    } else {
-      setFormErrors(formErrors);
-    }
-  };
-
   const validateForm = () => {
     let isFormValid = true;
 

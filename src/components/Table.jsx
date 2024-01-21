@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import "./App.css";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
+// EditableCell component represents a cell in the table that can be edited
 const EditableCell = ({ value, onDoubleClick, onBlur, onInput }) => {
   const [isEditing, setIsEditing] = useState(false);
 
+  // EditableCell component represents a cell in the table that can be edited
   const handleDoubleClick = () => {
     setIsEditing(true);
     onDoubleClick();
   };
 
+  // Handle blur to disable editing
   const handleBlur = () => {
     setIsEditing(false);
     onBlur();
-    toast.success(' Data updated successfully!', {
+
+    // Notify user about successful data update
+    toast.success(" Data updated successfully!", {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -25,6 +30,7 @@ const EditableCell = ({ value, onDoubleClick, onBlur, onInput }) => {
     });
   };
 
+  // Handle input to capture changes while editing
   const handleInput = (e) => {
     onInput(e.currentTarget.textContent);
   };
@@ -41,8 +47,9 @@ const EditableCell = ({ value, onDoubleClick, onBlur, onInput }) => {
     </td>
   );
 };
-
+// Table component renders a table with editable cells for student data
 const Table = ({ studentList, onEdit, onDelete }) => {
+  // Define the order of fields in the table
   const fieldOrder = [
     "fullName",
     "dob",
@@ -51,9 +58,9 @@ const Table = ({ studentList, onEdit, onDelete }) => {
     "mobileno",
     "gender",
     "address",
-    
   ];
 
+  // Handle editing of a field for a specific student
   const handleEdit = (index, field, updatedValue) => {
     const updatedStudentList = [...studentList];
 
@@ -73,16 +80,15 @@ const Table = ({ studentList, onEdit, onDelete }) => {
     <div className="d-flex">
       <div className="card" id="cardtable">
         <div className="bg-primary p-2" id="tbl">
+          {/* Table buttons */}
           <table className="list" id="studentList">
             <thead>
               <tr>
-                
                 {fieldOrder.map((field) => (
                   <th key={field}>{field}</th>
                 ))}
                 <th>Action</th>
               </tr>
-      
             </thead>
             <tbody className="text-light" id="tbl_body">
               {studentList.map((student, index) => (
@@ -99,6 +105,7 @@ const Table = ({ studentList, onEdit, onDelete }) => {
                     />
                   ))}
                   <td>
+                    {/* Action buttons */}
                     <button
                       className=" bg-green-500 px-6 py-2 m-2 rounded-2xl		"
                       onClick={() => onEdit(index)}

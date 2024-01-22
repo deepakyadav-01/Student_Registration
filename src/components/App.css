@@ -18,6 +18,25 @@ body {
     height: 45px;
 }
 
+/*styles for NavBar buttons */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+
+    background-color: #4a5568;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #2d3748;
+}
+
 /* for heading */
 h1.text-center.text-light {
     text-align: center;

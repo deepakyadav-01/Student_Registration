@@ -144,6 +144,7 @@ const Home = () => {
           className={`h-screen w-screen bg-${themeColor}-400 overflow-hidden absolute flex items-center`}
           id="main_bg"
         >
+          
           <div
             className={`w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-${themeColor}-300 rounded-full`}
           ></div>
@@ -191,7 +192,8 @@ const Home = () => {
         </div>
       </div>
 
-      <Navbar />
+      <Navbar handleTabChange={handleTabChange} />
+      
       <div className="d-flex">
         {activeTab === "form" && (
           <Form
@@ -208,20 +210,7 @@ const Home = () => {
         )}
       </div>
       {/* tabs for form and table */}
-      <div className="tabs">
-        <button
-          className={`tab-btn ${activeTab === "form" ? "active" : ""}`}
-          onClick={() => handleTabChange("form")}
-        >
-          Form
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "table" ? "active" : ""}`}
-          onClick={() => handleTabChange("table")}
-        >
-          Table
-        </button>
-      </div>
+
     </div>
   );
 };

@@ -69,22 +69,14 @@ const Home = () => {
     console.log("onEdit clicked:", index);
     const selectedStudent = studentList[index];
     console.log("Selected Student:", selectedStudent);
-
+  
     if (selectedStudent) {
-      // Use the functional form of setFormData to get the current state
-      const updatedFormData = {
-        fullName: selectedStudent.fullName || "",
-        dob: selectedStudent.dob || "",
-        age: selectedStudent.age || "",
-        email: selectedStudent.email || "",
-        mobileno: selectedStudent.mobileno || "",
-        gender: selectedStudent.gender || "",
-        address: selectedStudent.address || "",
-      };
-
+      // Use the spread operator to create a shallow copy of the selected student data
+      const updatedFormData = { ...selectedStudent };
+  
       // Log the current state after updating
       console.log("Updated Form Data State:", updatedFormData);
-
+  
       // Set the selected index and update form data
       setSelectedStudentIndex(index);
       setFormData(updatedFormData);
@@ -124,10 +116,22 @@ const Home = () => {
   // theme
   const [themeColor, setThemeColor] = useState("gray"); // Default theme color
 
+
   const changeTheme = (color) => {
     setThemeColor(color);
-    document.getElementById("submit").style.backgroundColor = color;
-    document.getElementById("reset").style.backgroundColor = color;
+  
+    // Get the elements by ID
+    const submitButton = document.getElementById("submit");
+    const resetButton = document.getElementById("reset");
+  
+    // Check if the elements exist before modifying their styles
+    if (submitButton) {
+      submitButton.style.backgroundColor = color;
+    }
+  
+    if (resetButton) {
+      resetButton.style.backgroundColor = color;
+    }
   };
 
   // tab switch

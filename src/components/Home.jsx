@@ -83,6 +83,7 @@ const Home = () => {
       });
       // Use the spread operator to create a shallow copy of the selected student data
       const updatedFormData = { ...selectedStudent };
+      updatedFormData.gender = "";
   
       // Log the current state after updating
       console.log("Updated Form Data State:", updatedFormData);
